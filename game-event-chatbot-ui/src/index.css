@@ -1,0 +1,53 @@
+/* src/index.css */
+
+/**
+ * This file imports shared resources and defines truly global styles.
+ * Component-specific styles are in src/css/LandingPage.css and src/css/PlannerPage.css.
+ * --- ADDED STYLES TO HIDE SCROLLBAR VISUALLY BUT KEEP BEHAVIOR ---
+ */
+
+/* Import Google Fonts needed by BOTH landing and planner pages */
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans:ital,wght@0,100..900;1,100..900&family=Oxanium:wght@200..800&family=Zen+Dots&display=swap');
+
+/* Import Tailwind CSS using the plugin method (processes base, components, utilities) */
+@import "tailwindcss";
+
+/* --- Global HTML/Body Styles --- */
+/* Styles applied to the entire document */
+html {
+    @apply h-full; /* Ensure HTML takes full viewport height */
+    /* Hide scrollbar visually (Firefox) */
+    scrollbar-width: none;
+}
+
+body {
+    /* Set base font from imported Google Fonts */
+    font-family: 'Noto Sans', sans-serif;
+    /* Apply background gradient, base text color, ensure full height, prevent horizontal scroll, enable antialiasing */
+    @apply bg-gradient-to-br from-[#1a1a2e] to-[#16213e] text-gray-200 h-full w-screen overflow-x-hidden antialiased;
+    /* Hide scrollbar visually (IE/Edge legacy) */
+    -ms-overflow-style: none;
+}
+
+/* Ensure the React root element also takes full height */
+#root {
+    @apply h-full;
+}
+
+/* Hide scrollbar visually (WebKit - Chrome, Safari, Edge) */
+/* Setting width to 0 is a common way to hide it visually */
+body::-webkit-scrollbar {
+    width: 0px;
+    background: transparent; /* Optional: just make scrollbar invisible */
+}
+
+
+/* --- Custom CSS Classes for Fonts (Globally Available) --- */
+/* Define reusable font classes if needed across different components/CSS files */
+.font-zen-dots {
+    font-family: 'Zen Dots', sans-serif;
+}
+
+.font-oxanium {
+    font-family: 'Oxanium', sans-serif;
+}
