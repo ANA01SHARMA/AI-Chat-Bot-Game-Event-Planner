@@ -1,0 +1,33 @@
+/* src/css/LandingPage.css */
+
+/**
+ * Contains styles exclusively for the LandingPage component.
+ * Assumes Tailwind base/components/utilities and global styles are imported via src/index.css.
+ */
+@import "tailwindcss";
+/* --- Landing Page Specific Styles --- */
+
+/* Styles for the main hero section background container */
+.hero-bg {
+    /* REMOVED sm:mb-16 from here - It will be applied directly in LandingPage.jsx */
+    @apply bg-cover bg-center rounded-lg shadow-xl overflow-hidden mb-12 flex items-center justify-center relative border border-white/10 min-h-[400px] sm:min-h-[500px];
+}
+
+/* Styles for the Swiper carousel used for examples */
+/* Next/Prev arrow styling */
+.themed-swiper .swiper-button-next::after,
+.themed-swiper .swiper-button-prev::after {
+    @apply text-cyan-400 text-2xl font-extrabold;
+}
+/* Default pagination bullet style */
+.themed-swiper .swiper-pagination-bullet {
+    @apply bg-gray-500 opacity-70;
+}
+/* Active pagination bullet style */
+.themed-swiper .swiper-pagination-bullet-active {
+    @apply bg-cyan-400 opacity-100;
+}
+
+/* Add any other styles ONLY used by LandingPage.jsx below */
+/* Example: Specific adjustments for feature cards if not covered by utilities */
+/* .feature-card-custom { ... } */
